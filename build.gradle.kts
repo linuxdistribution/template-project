@@ -32,7 +32,31 @@ java {
     targetCompatibility = JavaVersion.VERSION_21
 }
 
-tasks.compileJava {
-    dependsOn(tasks.licenseFormat)
+tasks {
+    jar {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+        manifest {
+            attributes(
+                "Main-Class" to "com.linuxdistribution.templateproject",
+            )
+        }
+
+        from("LICENSE") {
+            rename { "${it}_${project.name}" }
+        }
+    }
+
+    license {
+        skipExistingHeaders = true
+    }
+
+    compileJava {
+        dependsOn(licenseFormat)
+    }
+}
+
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
 }
 

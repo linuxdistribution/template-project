@@ -1,0 +1,24 @@
+# Ignore everything by default
+/*
+
+# Allow source files
+!src/
+
+# Allow gradle
+!gradle/
+!gradlew
+!gradlew.bat
+!build.gradle.kts
+!settings.gradle.kts
+!gradle.properties
+
+# Allow git
+!.github/
+!.gitignore
+
+# Allow license files
+!LICENSE
+!LICENSE_HEADER.txt
+
+# ALlow readme
+!README.md

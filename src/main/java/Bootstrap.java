@@ -1,5 +1,3 @@
-import com.linuxdistribution.templateproject.TemplateProject;
-
 /*
  * This file is part of template-project - https://github.com/linuxdistribution/template-project
  * Copyright (C) 2024-2025 linuxdistribution <linuxdistribution@duck.com> and contributors
@@ -16,6 +14,8 @@ import com.linuxdistribution.templateproject.TemplateProject;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import com.linuxdistribution.templateproject.TemplateProject;
+
 public class Bootstrap {
 
     public static void main(final String[] args) {
