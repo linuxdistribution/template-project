@@ -1,6 +1,5 @@
 plugins {
     id("java")
-    id("net.kyori.indra.license-header") version("3.1.3")
 }
 
 group = property("project_group") as String
@@ -45,14 +44,6 @@ tasks {
         from("LICENSE") {
             rename { "${it}_${project.name}" }
         }
-    }
-
-    license {
-        skipExistingHeaders = true
-    }
-
-    compileJava {
-        dependsOn(licenseFormat)
     }
 }
 
