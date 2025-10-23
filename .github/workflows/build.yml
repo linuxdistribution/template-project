@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
         with:
-          persist-credentials: true
+          persist-credentials: false
       - name: Setup gradle
         uses: gradle/actions/setup-gradle@v5
       - name: Setup java jdk 21
@@ -23,6 +24,8 @@ jobs:
           java-version: 21
           distribution: 'temurin'
           check-latest: true
+      - name: Give execute permission for gradlew
+        run: chmod +x ./gradlew
       - name: Build via gradle
         run: ./gradlew clean build
       - name: Upload artifacts to github
